@@ -1,4 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body { @apply bg-slate-50 text-slate-900 antialiased; }
+
+/* Fallback CSS vars in case ThemeProvider hasn't mounted yet (SSR/first paint). */
+:root {
+  --brand: #0f172a;
+  --brand-accent: #f97316;
+  --surface: #f8fafc;
+  --ink: #0f172a;
+}
+
+body { @apply bg-surface text-ink antialiased; }
