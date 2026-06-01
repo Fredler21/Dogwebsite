@@ -1,3 +1,3 @@
-# V8 — Analytics + Automation
+# V9 — Security Hardening
 
-GA4 + Meta/TikTok/Pinterest pixels with cross-platform `trackEvent` helper. Five scheduled Cloud Functions: abandoned carts, delayed orders, review requests, low stock, supplier nudges. SEO basics: robots, product JSON-LD. Admin analytics dashboard placeholder.
+Strict Firestore rules (default-deny + field validation), super-admin-only RBAC callables, audit log, rate limiter, error boundary, consent banner, nightly backups, gitleaks scanning, and a full security review document set.
