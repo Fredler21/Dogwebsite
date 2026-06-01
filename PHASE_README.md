@@ -1,3 +1,3 @@
-# V7 — Supplier Workflow
+# V8 — Analytics + Automation
 
-Suppliers, supplier orders, fulfillment status propagation. Customer never sees supplier identity. Tracking entered by admin on the supplier order auto-syncs to the customer order and fires the V5 tracking email.
+GA4 + Meta/TikTok/Pinterest pixels with cross-platform `trackEvent` helper. Five scheduled Cloud Functions: abandoned carts, delayed orders, review requests, low stock, supplier nudges. SEO basics: robots, product JSON-LD. Admin analytics dashboard placeholder.
