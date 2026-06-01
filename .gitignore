@@ -1,12 +1,5 @@
 node_modules/
 .next/
 out/
-dist/
-lib/
-.env
 .env.local
-.env.*.local
-.firebase/
-.DS_Store
 *.log
-coverage/
