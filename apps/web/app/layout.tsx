@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="min-h-screen bg-surface text-ink antialiased">
         <ErrorBoundary>
-          <ThemeProvider preset="car">
+          <ThemeProvider preset="pet">
             <CartProvider>
               <Header />
               <main className="min-h-[60vh]">{children}</main>
