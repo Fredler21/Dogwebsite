@@ -1,3 +1,7 @@
 {
-  "projects": { "default": "allyoucanuse-REPLACE" }
+  "projects": {
+    "default": "dogvanta-bc5e4"
+  },
+  "targets": {},
+  "etags": {}
 }
