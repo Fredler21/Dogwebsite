@@ -1,3 +1,3 @@
-# V5 — Customer Communication
+# V6 — AI Operations Assistant
 
-Transactional email, support tickets, contact form. Email goes through Resend (swappable). Every send is logged to `/emailLogs`. Customer emails are short, professional, and never make fake promises (PRD section 16).
+AI assists, humans decide. Refunds, cancellations, price changes, product edits, money-related customer emails, supplier payouts, and legal text are **hard-blocked** from AI execution at every automation level. Every AI call is logged to `/aiLogs`.
