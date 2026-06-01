@@ -1,3 +1,3 @@
-# V6 — AI Operations Assistant
+# V7 — Supplier Workflow
 
-AI assists, humans decide. Refunds, cancellations, price changes, product edits, money-related customer emails, supplier payouts, and legal text are **hard-blocked** from AI execution at every automation level. Every AI call is logged to `/aiLogs`.
+Suppliers, supplier orders, fulfillment status propagation. Customer never sees supplier identity. Tracking entered by admin on the supplier order auto-syncs to the customer order and fires the V5 tracking email.
