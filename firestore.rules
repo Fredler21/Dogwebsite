@@ -1,0 +1,9 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // V0 default-deny. Real rules implemented in V2/V9.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

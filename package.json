@@ -1,0 +1,13 @@
+{
+  "name": "allyoucanuse",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": ["apps/*", "functions"],
+  "scripts": {
+    "dev": "npm --workspace apps/web run dev",
+    "build": "npm --workspace apps/web run build",
+    "lint": "npm --workspace apps/web run lint",
+    "functions:build": "npm --workspace functions run build",
+    "functions:serve": "npm --workspace functions run serve"
+  }
+}
