@@ -1,5 +1,5 @@
-# V3 — Admin Dashboard
+# V4 — Stripe Checkout + Webhook
 
-Next.js admin section under `/admin/*`. Protected by Firebase Auth + the `admin` custom claim (see V2 backend). Mock data lives in `lib/mockData.ts`; real Firestore wiring happens after V2 is deployed.
+Adds Stripe payments to the order lifecycle. Customer hits `/checkout`, server creates a Stripe Checkout Session with server-recomputed prices, customer pays on Stripe-hosted page, webhook flips the order to `paid`.
 
-Routes shipped here: overview, orders + detail, products + new, plus placeholders for V5/V6/V7/V8 sections.
+See `docs/STRIPE_SETUP.md` and `docs/STRIPE_TESTING.md`.
