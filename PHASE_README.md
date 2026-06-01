@@ -1,13 +1,5 @@
-# V2 — Firebase Backend MVP
+# V3 — Admin Dashboard
 
-Firestore schema, security rules, and Cloud Function skeletons. No real integrations yet — those land in:
-- V4 Stripe wiring
-- V5 email + support ticket UX
-- V6 AI assistant
-- V7 supplier workflow
-- V9 strict rules + audit logs
+Next.js admin section under `/admin/*`. Protected by Firebase Auth + the `admin` custom claim (see V2 backend). Mock data lives in `lib/mockData.ts`; real Firestore wiring happens after V2 is deployed.
 
-Deploy:
-```bash
-firebase deploy --only firestore:rules,firestore:indexes,storage,functions
-```
+Routes shipped here: overview, orders + detail, products + new, plus placeholders for V5/V6/V7/V8 sections.
