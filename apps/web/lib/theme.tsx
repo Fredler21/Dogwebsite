@@ -13,7 +13,7 @@ interface Theme {
 }
 
 const THEMES: Record<ThemePreset, Theme> = {
-  car: { name: 'car', brand: '#0f172a', brandAccent: '#f97316', surface: '#f8fafc', ink: '#0f172a', logoText: 'Allyoucanuse' },
+  car: { name: 'car', brand: '#0f172a', brandAccent: '#f97316', surface: '#f8fafc', ink: '#0f172a', logoText: 'Dogvanta' },
   pet: { name: 'pet', brand: '#7c3aed', brandAccent: '#f59e0b', surface: '#faf5ff', ink: '#1e1b4b', logoText: 'Pawkind' },
   home: { name: 'home', brand: '#065f46', brandAccent: '#d97706', surface: '#fafaf9', ink: '#1c1917', logoText: 'Homely' }
 };

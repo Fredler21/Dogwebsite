@@ -9,13 +9,13 @@ import { ConsentBanner } from '@/components/ConsentBanner';
 import { GA4 } from '@/components/analytics/GA4';
 import { MetaPixel, TikTokPixel, PinterestTag } from '@/components/analytics/Pixels';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://allyoucanuse.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Allyoucanuse — premium car accessories', template: '%s | Allyoucanuse' },
-  description: 'Premium car accessories shipped to your door. Free returns. Real support.',
-  openGraph: { type: 'website', siteName: 'Allyoucanuse', url: SITE_URL }
+  title: { default: 'Dogvanta — premium products for happy dogs', template: '%s | Dogvanta' },
+  description: 'Premium dog accessories shipped to your door. Free returns. Real support.',
+  openGraph: { type: 'website', siteName: 'Dogvanta', url: SITE_URL }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -8,11 +8,15 @@ function requireAdmin(req: CallableRequest): void {
 const STATUSES = ['awaiting','sourced','shipped','delivered','cancelled','issue'] as const;
 type SupplierOrderStatus = typeof STATUSES[number];
 
-/** Assign a paid order to a supplier. Creates a /supplierOrders row + links it on the order. */
+/** Assign a paid order to a supplier. Creates a /supplierOrders row + links it on the order.
+ *  Captures the supplier currency + FX-rate snapshot so margin reports stay accurate
+ *  even after rates drift. `fxRateToStoreCurrency` is a multiplier such that
+ *  costCents * fxRateToStoreCurrency = costCents in store currency. */
 export const assignSupplierToOrder = onCall(async (req: CallableRequest) => {
   requireAdmin(req);
-  const { orderId, supplierId, costCents, notes } = (req.data ?? {}) as
-    { orderId?: string; supplierId?: string; costCents?: number; notes?: string };
+  const { orderId, supplierId, costCents, notes, supplierCostCents, supplierCurrency, fxRateToStoreCurrency } = (req.data ?? {}) as
+    { orderId?: string; supplierId?: string; costCents?: number; notes?: string;
+      supplierCostCents?: number; supplierCurrency?: string; fxRateToStoreCurrency?: number };
   if (!orderId || !supplierId) throw new HttpsError('invalid-argument', 'orderId + supplierId required');
   if (typeof costCents !== 'number' || costCents < 0) throw new HttpsError('invalid-argument', 'costCents required');
 
@@ -22,13 +26,19 @@ export const assignSupplierToOrder = onCall(async (req: CallableRequest) => {
   ]);
   if (!order.exists) throw new HttpsError('not-found', 'order not found');
   if (!supplier.exists) throw new HttpsError('not-found', 'supplier not found');
-  if (supplier.data()?.active === false) throw new HttpsError('failed-precondition', 'supplier is inactive');
+  const supplierData = supplier.data() ?? {};
+  if (supplierData.active === false) throw new HttpsError('failed-precondition', 'supplier is inactive');
 
   const now = Date.now();
   const ref = await db.collection('supplierOrders').add({
     orderId, supplierId,
     status: 'awaiting' as SupplierOrderStatus,
     costCents,
+    // FX snapshot — frozen at assignment so margin reports are accurate
+    supplierCostCents: typeof supplierCostCents === 'number' ? supplierCostCents : costCents,
+    supplierCurrency: supplierCurrency ?? supplierData.currency ?? 'USD',
+    fxRateToStoreCurrency: typeof fxRateToStoreCurrency === 'number' ? fxRateToStoreCurrency : 1,
+    fxSnapshotAt: now,
     notes: notes ?? null,
     createdAt: now, updatedAt: now
   });

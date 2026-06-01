@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="mt-16 border-t border-slate-200 bg-slate-50">
       <div className="mx-auto grid max-w-6xl gap-8 p-8 text-sm md:grid-cols-4">
         <div>
-          <div className="font-bold">Allyoucanuse</div>
+          <div className="font-bold">Dogvanta</div>
           <p className="mt-2 text-slate-600">Useful products, delivered.</p>
         </div>
         <div>
@@ -33,7 +33,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-slate-200 p-4 text-center text-xs text-slate-500">© Allyoucanuse</div>
+      <div className="border-t border-slate-200 p-4 text-center text-xs text-slate-500">© Dogvanta</div>
     </footer>
   );
 }

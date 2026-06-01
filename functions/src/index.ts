@@ -23,8 +23,9 @@ export { aiDraftReply } from './ai/aiDraftReply';
 export { aiApproveAction } from './ai/aiApproveAction';
 
 // Suppliers (V7)
-export { createSupplier, updateSupplier, setSupplierActive } from './suppliers/supplierCrud';
+export { createSupplier, updateSupplier, setSupplierActive, recordSupplierVetting } from './suppliers/supplierCrud';
 export { assignSupplierToOrder, updateSupplierOrderStatus } from './suppliers/supplierFulfillment';
+export { validateProductMargin, recordSupplierCostChange, approvePriceReview } from './suppliers/marginGuardrail';
 
 // Scheduled / automations (V8 + V9 + V10)
 export { checkAbandonedCarts, checkDelayedOrders, sendReviewRequests, lowStockAlerts, nudgeStuckSupplierOrders } from './scheduled/automations';

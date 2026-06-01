@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { PRODUCTS, CATEGORIES } from '@/lib/mockProducts';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://allyoucanuse.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

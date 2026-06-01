@@ -35,7 +35,7 @@ export async function seed(): Promise<void> {
   }, { merge: true });
 
   await db.collection('settings').doc('public').set({
-    storeName: 'Allyoucanuse', supportEmail: 'support@allyoucanuse.com', currency: 'USD'
+    storeName: 'Dogvanta', supportEmail: 'support@dogvanta.com', currency: 'USD'
   }, { merge: true });
   await db.collection('settings').doc('store').set({
     aiAutomationLevel: 'manual', shippingPolicyVersion: '1.0', returnPolicyVersion: '1.0'

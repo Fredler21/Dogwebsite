@@ -13,5 +13,5 @@ export function stripe(): Stripe {
   return _stripe;
 }
 
-export const SUCCESS_URL = process.env.CHECKOUT_SUCCESS_URL ?? 'https://allyoucanuse.com/order-success?session_id={CHECKOUT_SESSION_ID}';
-export const CANCEL_URL = process.env.CHECKOUT_CANCEL_URL ?? 'https://allyoucanuse.com/cart';
+export const SUCCESS_URL = process.env.CHECKOUT_SUCCESS_URL ?? 'https://dogvanta.com/order-success?session_id={CHECKOUT_SESSION_ID}';
+export const CANCEL_URL = process.env.CHECKOUT_CANCEL_URL ?? 'https://dogvanta.com/cart';
