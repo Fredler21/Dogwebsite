@@ -1,7 +1,17 @@
 import type { Config } from 'tailwindcss';
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
-  theme: { extend: { colors: { brand: { DEFAULT: '#0f172a', accent: '#0ea5e9' } } } },
+  theme: {
+    extend: {
+      colors: {
+        // Driven by CSS variables set in lib/theme.tsx
+        brand: 'var(--brand)',
+        'brand-accent': 'var(--brand-accent)',
+        surface: 'var(--surface)',
+        ink: 'var(--ink)'
+      }
+    }
+  },
   plugins: []
 };
 export default config;
