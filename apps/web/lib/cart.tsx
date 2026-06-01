@@ -45,4 +45,4 @@ export function useCart(): CartCtx {
   return v;
 }
 
-export const fmt = (cents: number) => `$${(cents / 100).toFixed(2)}`;
+export { fmt } from './format';

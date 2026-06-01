@@ -5,3 +5,11 @@ functions/lib/
 .env.local
 *.log
 .DS_Store
+
+# Build artifacts
+.next/
+out/
+apps/web/.next/
+apps/web/tsconfig.tsbuildinfo
+apps/web/next-env.d.ts
+
