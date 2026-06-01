@@ -1,3 +1,3 @@
-# V9 — Security Hardening
+# V10 — Premium Scaling
 
-Strict Firestore rules (default-deny + field validation), super-admin-only RBAC callables, audit log, rate limiter, error boundary, consent banner, nightly backups, gitleaks scanning, and a full security review document set.
+Multi-store theming, landing-page CMS scaffold, A/B testing helper, supplier scorecards (nightly), loyalty points + referrals. Launch checklist included.

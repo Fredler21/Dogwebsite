@@ -1,2 +1,2 @@
-export { setAdminClaim, listAdmins } from './admin/rbac';
-export { nightlyBackup } from './scheduled/backup';
+export { computeSupplierScorecards } from './scheduled/supplierScorecards';
+export { awardLoyaltyOnPaid, recordReferral } from './growth/loyalty';
