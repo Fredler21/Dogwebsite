@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Product } from '@/lib/types';
-import { fmt } from '@/lib/cart';
+import { fmt } from '@/lib/format';
 
 export function ProductCard({ p }: { p: Product }) {
   return (
