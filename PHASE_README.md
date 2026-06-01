@@ -1,10 +1,13 @@
-# V1 — Storefront MVP
+# V2 — Firebase Backend MVP
 
-Next.js 14 + TypeScript + Tailwind storefront with 20 mock car-accessory products. No Firebase or Stripe wiring yet — those come in V2 and V4.
+Firestore schema, security rules, and Cloud Function skeletons. No real integrations yet — those land in:
+- V4 Stripe wiring
+- V5 email + support ticket UX
+- V6 AI assistant
+- V7 supplier workflow
+- V9 strict rules + audit logs
 
-Run:
+Deploy:
 ```bash
-cd apps/web && npm install && npm run dev
+firebase deploy --only firestore:rules,firestore:indexes,storage,functions
 ```
-
-See `prd.md` section 7 for the full storefront spec.
