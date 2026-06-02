@@ -14,7 +14,10 @@ export function Header() {
           <Link href="/collections/cleaning-tools" className="text-sm hover:text-brand-accent">Cleaning</Link>
           <Link href="/support" className="text-sm hover:text-brand-accent">Support</Link>
         </nav>
-        <Link href="/cart" className="rounded-full border border-slate-300 px-4 py-1.5 text-sm">Cart ({count})</Link>
+        <div className="flex items-center gap-3">
+          <Link href="/admin/login" className="text-sm text-slate-500 hover:text-brand-accent">Sign in</Link>
+          <Link href="/cart" className="rounded-full border border-slate-300 px-4 py-1.5 text-sm">Cart ({count})</Link>
+        </div>
       </div>
     </header>
   );
