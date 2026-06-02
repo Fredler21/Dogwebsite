@@ -39,6 +39,7 @@ async function rateLimit(identity: string): Promise<void> {
 export const createCheckoutSession = onCall<Input>(
   {
     secrets: ['STRIPE_SECRET_KEY'],
+    invoker: 'public',
     // App Check enforcement: drops calls that aren't from our official site.
     // Currently disabled until reCAPTCHA Enterprise site key is wired on the web.
     // To enable: set ENFORCE_APP_CHECK=true in functions env after configuring the client.

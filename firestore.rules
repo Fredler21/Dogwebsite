@@ -81,6 +81,7 @@ service cloud.firestore {
     match /stores/{id}            { allow read: if true; allow write: if isAdmin(); }
     match /config/{id}            { allow read: if isAdmin(); allow write: if isAdmin(); }
     match /rateLimits/{id}        { allow read, write: if false; } // server-only
+    match /processedStripeEvents/{id} { allow read, write: if false; } // server-only idempotency
 
     // Default deny.
     match /{document=**} { allow read, write: if false; }

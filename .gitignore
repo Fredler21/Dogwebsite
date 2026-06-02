@@ -20,3 +20,6 @@ serviceAccount.json
 **/dogvanta-bc5e4-firebase-adminsdk-*.json
 **/google-credentials*.json
 
+.vercel
+.env*
+functions/.env
