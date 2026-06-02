@@ -7,6 +7,7 @@ import { StatCard } from '@/components/admin/StatCard';
 type Order = {
   paymentStatus?: string;
   fulfillmentStatus?: string;
+  grandTotal?: number;
   total?: number;
   createdAt?: number;
   estimatedDelivery?: number;
@@ -78,7 +79,7 @@ export default function AdminOverview() {
 
   const sales = dayOrders
     .filter((o) => o.paymentStatus === 'paid')
-    .reduce((s, o) => s + (o.total ?? 0), 0);
+    .reduce((s, o) => s + (o.grandTotal ?? o.total ?? 0), 0);
   const pendingOrders = dayOrders.filter((o) => o.paymentStatus === 'pending').length;
   const unfulfilled = dayOrders.filter(
     (o) => o.paymentStatus === 'paid' && (o.fulfillmentStatus ?? 'unfulfilled') !== 'fulfilled'

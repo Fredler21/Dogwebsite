@@ -28,6 +28,7 @@ function Bar({ label, value, max }: { label: string; value: number; max: number 
 
 type Order = {
   paymentStatus?: string;
+  grandTotal?: number;
   total?: number;
   createdAt?: number;
   items?: { productId?: string; title?: string; quantity?: number }[];
@@ -56,7 +57,7 @@ export default function AdminAnalytics() {
   if (error) return <p className="text-sm text-red-600">{error}</p>;
   if (!orders) return <p className="text-sm text-slate-500">Loading…</p>;
 
-  const revenue = orders.reduce((s, o) => s + (o.total ?? 0), 0);
+  const revenue = orders.reduce((s, o) => s + (o.grandTotal ?? o.total ?? 0), 0);
   const orderCount = orders.length;
   const productCounts = new Map<string, number>();
   for (const o of orders) {
