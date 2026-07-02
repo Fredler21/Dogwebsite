@@ -1,16 +1,19 @@
 import Link from 'next/link';
 import { ProductCard } from '@/components/product/ProductCard';
-import { CATEGORIES, productsByCategory } from '@/lib/mockProducts';
+import { CATEGORIES, getProductsByCategory } from '@/lib/products';
 import { notFound } from 'next/navigation';
+
+// Revalidate live products at most once a minute (ISR).
+export const revalidate = 60;
 
 export async function generateStaticParams() {
   return CATEGORIES.map(c => ({ slug: c.slug }));
 }
 
-export default function CategoryPage({ params }: { params: { slug: string } }) {
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
   const cat = CATEGORIES.find(c => c.slug === params.slug);
   if (!cat) return notFound();
-  const products = productsByCategory(params.slug);
+  const products = await getProductsByCategory(params.slug);
 
   return (
     <main>

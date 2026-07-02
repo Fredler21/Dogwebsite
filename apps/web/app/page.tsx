@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { ProductCard } from '@/components/product/ProductCard';
-import { PRODUCTS, CATEGORIES } from '@/lib/mockProducts';
+import { getProducts, CATEGORIES } from '@/lib/products';
+
+// Re-fetch live products at most once a minute (ISR) so newly added products
+// appear without a redeploy, while keeping the page fast and cacheable.
+export const revalidate = 60;
 
 const TRUST = [
   { icon: '🚚', title: 'Free shipping', sub: 'On orders over $50' },
@@ -15,10 +19,14 @@ const REVIEWS = [
   { name: 'Priya K.', text: 'No-pull harness is a game changer on walks. Ordered one for each of my two pups.', pet: 'Beagles x2' }
 ];
 
-export default function HomePage() {
-  const bestSellers = PRODUCTS.filter(p => p.badge === 'Best seller').slice(0, 4);
-  // Grooming range for "New arrivals" — no overlap with the best sellers above.
-  const featured = PRODUCTS.slice(12, 16);
+export default async function HomePage() {
+  const PRODUCTS = await getProducts();
+  // Best sellers by badge; fall back to the newest products so the grid is
+  // never empty once you've added real products without badges.
+  const flagged = PRODUCTS.filter(p => p.badge === 'Best seller');
+  const bestSellers = (flagged.length ? flagged : PRODUCTS).slice(0, 4);
+  // "New arrivals" — the next batch, with no overlap with the best sellers above.
+  const featured = PRODUCTS.slice(4, 8);
 
   return (
     <main>

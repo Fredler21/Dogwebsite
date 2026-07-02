@@ -1,22 +1,43 @@
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 import { useCart, fmt } from '@/lib/cart';
-import { findProduct, PRODUCTS, CATEGORIES } from '@/lib/mockProducts';
+import { getProducts, getCategory } from '@/lib/products';
+import type { Product } from '@/lib/types';
 import { ProductCard } from '@/components/product/ProductCard';
 
 export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = findProduct(params.slug);
+  const [products, setProducts] = useState<Product[] | null>(null);
   const [qty, setQty] = useState(1);
   const [activeImg, setActiveImg] = useState(0);
   const [added, setAdded] = useState(false);
   const { add } = useCart();
 
-  if (!product) return notFound();
+  useEffect(() => {
+    let on = true;
+    getProducts().then((p) => on && setProducts(p));
+    return () => {
+      on = false;
+    };
+  }, []);
 
-  const cat = CATEGORIES.find(c => c.id === product.categoryId);
-  const related = PRODUCTS.filter(p => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4);
+  if (products === null) {
+    return <main className="mx-auto max-w-7xl px-6 py-20 text-center text-slate-500">Loading…</main>;
+  }
+
+  const product = products.find((p) => p.slug === params.slug);
+  if (!product) {
+    return (
+      <main className="mx-auto max-w-7xl px-6 py-20 text-center">
+        <h1 className="font-display text-2xl font-bold">Product not found</h1>
+        <p className="mt-2 text-slate-500">This product may have been removed or is no longer available.</p>
+        <Link href="/shop" className="mt-4 inline-block text-brand hover:underline">← Back to shop</Link>
+      </main>
+    );
+  }
+
+  const cat = getCategory(product.categoryId);
+  const related = products.filter((p) => p.categoryId === product.categoryId && p.id !== product.id).slice(0, 4);
   const onSale = product.compareAtPrice && product.compareAtPrice > product.price;
   const save = onSale ? (product.compareAtPrice as number) - product.price : 0;
   const full = Math.round(product.rating ?? 0);

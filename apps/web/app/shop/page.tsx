@@ -1,7 +1,8 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
 import { ProductCard } from '@/components/product/ProductCard';
-import { PRODUCTS, CATEGORIES } from '@/lib/mockProducts';
+import { getProducts, CATEGORIES } from '@/lib/products';
+import type { Product } from '@/lib/types';
 
 type Sort = 'featured' | 'price-asc' | 'price-desc' | 'rating';
 
@@ -9,6 +10,8 @@ export default function ShopPage() {
   const [cat, setCat] = useState('');
   const [q, setQ] = useState('');
   const [sort, setSort] = useState<Sort>('featured');
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Pick up a search query passed from the header (?q=...) without needing Suspense.
   useEffect(() => {
@@ -16,15 +19,26 @@ export default function ShopPage() {
     if (query) setQ(query);
   }, []);
 
+  // Load live products from Firestore (falls back to the demo catalogue).
+  useEffect(() => {
+    let active = true;
+    getProducts()
+      .then((p) => active && setProducts(p))
+      .finally(() => active && setLoading(false));
+    return () => {
+      active = false;
+    };
+  }, []);
+
   const filtered = useMemo(() => {
-    let list = PRODUCTS.filter(
+    let list = products.filter(
       p => (!cat || p.categoryId === cat) && (!q || p.title.toLowerCase().includes(q.toLowerCase()))
     );
     if (sort === 'price-asc') list = [...list].sort((a, b) => a.price - b.price);
     else if (sort === 'price-desc') list = [...list].sort((a, b) => b.price - a.price);
     else if (sort === 'rating') list = [...list].sort((a, b) => (b.rating ?? 0) - (a.rating ?? 0));
     return list;
-  }, [cat, q, sort]);
+  }, [products, cat, q, sort]);
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-10">
@@ -74,7 +88,9 @@ export default function ShopPage() {
         </div>
       </div>
 
-      {filtered.length === 0 ? (
+      {loading ? (
+        <p className="mt-16 text-center text-slate-500">Loading products…</p>
+      ) : filtered.length === 0 ? (
         <p className="mt-16 text-center text-slate-500">No products match your search. Try another term or category.</p>
       ) : (
         <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">

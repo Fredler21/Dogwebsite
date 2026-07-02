@@ -1,4 +1,4 @@
-# ALLYOUCANUSE.COM
+# DOGVANTA.COM
 
 ## Premium Product Requirements Document
 
@@ -8,7 +8,7 @@ One Website - Firebase Backend - AI Operations Assistant - Claude Build Prompts
 
 **Purpose:** This document gives you a full website build plan for one dropshipping brand. It breaks the work into professional engineering phases so you can build the customer website, admin dashboard, Firebase backend, order system, supplier workflow, and AI Store Copilot step by step.
 
-**Recommended first niche:** Car accessories. You can later reuse the same system for pet accessories or home decor.
+**Recommended first niche:** Dog walking and travel gear (harnesses, leashes, car seat covers, travel bowls). You can later expand the same system to dog beds, toys, grooming, and feeding.
 
 **Important rule:** Build one strong website first. Do not build three websites until the first one can accept payments, fulfill orders, handle support, and track profit.
 
@@ -16,7 +16,7 @@ One Website - Firebase Backend - AI Operations Assistant - Claude Build Prompts
 
 ## 1. Executive Summary
 
-Allyoucanuse.com should be built as a focused ecommerce website for useful products, not as a messy general store. The first version should focus on one profitable category, such as car accessories. The system must include a clean customer website, a private admin dashboard, a Firebase backend, secure checkout, order tracking, supplier management, customer support, analytics, and an AI Operations Assistant that watches the store 24/7.
+Dogvanta.com should be built as a focused ecommerce website for dog products, not as a messy general store. The first version should focus on one profitable category, such as dog walking and travel gear. The system must include a clean customer website, a private admin dashboard, a Firebase backend, secure checkout, order tracking, supplier management, customer support, analytics, and an AI Operations Assistant that watches the store 24/7.
 
 The best architecture is one main website with three parts:
 
@@ -28,11 +28,11 @@ The best architecture is one main website with three parts:
 
 ## 2. Product Vision
 
-**Product statement:** Allyoucanuse.com helps customers discover practical products that make everyday life easier. The brand should feel clean, useful, trustworthy, fast, and organized.
+**Product statement:** Dogvanta.com helps dog owners discover practical, high-quality products that make life with their dog easier. The brand should feel clean, useful, trustworthy, fast, and organized.
 
 **Brand positioning:**
 
-- Useful products only - no random junk.
+- Quality dog products only - no random junk.
 - Clear shipping expectations - no fake fast-shipping promises.
 - Simple checkout - customers can buy fast from mobile.
 - Strong customer communication - order confirmations, tracking, support, and refund rules.
@@ -42,11 +42,11 @@ The best architecture is one main website with three parts:
 
 ## 3. Website Scope - One Website Only
 
-**Domain:** allyoucanuse.com
+**Domain:** dogvanta.com
 
-**Recommended first category:** Car accessories
+**Recommended first category:** Dog walking and travel gear
 
-**Future categories after proof of sales:** pet accessories, home decor, home organization, tech accessories.
+**Future categories after proof of sales:** dog beds and comfort, toys and enrichment, grooming and care, feeding and bowls, dog apparel.
 
 **Initial product count:** 20 to 30 products only. Do not launch with hundreds of products. Start clean, test winners, then scale.
 
@@ -65,11 +65,11 @@ Customer Website
 - Home
 - Shop
 - Collections
-  - Interior Accessories
-  - Cleaning Tools
-  - Phone Holders
-  - Storage and Organization
-  - Comfort Accessories
+  - Harnesses and Leashes
+  - Travel and Car Safety
+  - Beds and Comfort
+  - Toys and Enrichment
+  - Grooming and Care
 - Product Detail Page
 - Cart
 - Checkout
@@ -120,7 +120,7 @@ Firebase Backend
 - Set up GitHub repository.
 - Set up Firebase project.
 - Set up Stripe account in test mode.
-- Set up professional email such as support@allyoucanuse.com.
+- Set up professional email such as support@dogvanta.com.
 - Create brand basics: logo, colors, fonts, tone, page layout rules.
 - Define product selection rules: useful, safe, non-counterfeit, shippable, profitable.
 
@@ -673,7 +673,7 @@ The AI Operations Assistant is not a separate website. It is a backend module an
 
 ## 18. SEO Requirements
 
-- Clean URLs such as /products/360-dashboard-phone-holder.
+- Clean URLs such as /products/no-pull-dog-harness.
 - Meta title and meta description for every product.
 - Image alt text.
 - Sitemap.xml.
@@ -727,10 +727,10 @@ Use these prompts in Claude when you want it to build the website professionally
 /godmode
 You are a senior full-stack software engineer, product architect, security-minded Firebase backend developer, and ecommerce systems designer.
 
-Build a professional dropshipping ecommerce website called Allyoucanuse.com.
+Build a professional dropshipping ecommerce website called Dogvanta.com.
 
 Main goal:
-Create one premium ecommerce website for useful products, starting with car accessories. The system must include a customer storefront, admin dashboard, Firebase backend, Stripe checkout, order management, supplier workflow, customer support, analytics, and an AI Operations Assistant module.
+Create one premium ecommerce website for dog products, starting with dog walking and travel gear. The system must include a customer storefront, admin dashboard, Firebase backend, Stripe checkout, order management, supplier workflow, customer support, analytics, and an AI Operations Assistant module.
 
 Technology requirements:
 - Frontend: Next.js with TypeScript
@@ -774,7 +774,7 @@ Start with V1 storefront MVP unless I ask for another phase.
 
 ```
 /godmode build V1 storefront
-Create the customer storefront for Allyoucanuse.com using Next.js, TypeScript, and Tailwind CSS.
+Create the customer storefront for Dogvanta.com using Next.js, TypeScript, and Tailwind CSS.
 
 Build these pages:
 - Home
@@ -816,7 +816,7 @@ Write clean TypeScript components and explain how each file works.
 
 ```
 /godmode build V2 Firebase backend
-Create the Firebase backend for Allyoucanuse.com.
+Create the Firebase backend for Dogvanta.com.
 
 Use:
 - Firebase Auth
@@ -852,7 +852,7 @@ Do not create any insecure public write access except controlled support ticket/
 
 ```
 /godmode build Stripe checkout
-Add Stripe Checkout to Allyoucanuse.com using Firebase Cloud Functions.
+Add Stripe Checkout to Dogvanta.com using Firebase Cloud Functions.
 
 Requirements:
 - createCheckoutSession callable or HTTPS function
@@ -877,7 +877,7 @@ Output code files and explain each step.
 
 ```
 /godmode build admin dashboard
-Create a private admin dashboard for Allyoucanuse.com.
+Create a private admin dashboard for Dogvanta.com.
 
 Pages:
 - Admin overview
@@ -913,7 +913,7 @@ Use reusable components and protect routes.
 
 ```
 /godmode build AI Operations Assistant
-Build the AI Operations Assistant module for Allyoucanuse.com.
+Build the AI Operations Assistant module for Dogvanta.com.
 
 The AI should not be a separate website. It must be a backend module and an admin dashboard section.
 
@@ -947,7 +947,7 @@ Output the code architecture, data models, functions, and admin UI components.
 
 ```
 /godmode build supplier workflow
-Create supplier management and dropshipping fulfillment workflow for Allyoucanuse.com.
+Create supplier management and dropshipping fulfillment workflow for Dogvanta.com.
 
 Requirements:
 - supplier profile page
@@ -972,7 +972,7 @@ Do not auto-order from supplier in the first version unless admin approves.
 /godmode QA review
 Act as a senior QA engineer and security reviewer.
 
-Review the Allyoucanuse.com codebase for:
+Review the Dogvanta.com codebase for:
 - Broken checkout flow
 - Insecure Firebase rules
 - Secret keys exposed in frontend
@@ -1020,7 +1020,7 @@ Output:
 ## 23. Files and Folder Structure
 
 ```
-allyoucanuse/
+dogvanta/
 - apps/
   - web/
     - app/
@@ -1116,8 +1116,8 @@ Use this order: first plan the project structure, then create the repository, th
 
 ### 27.1 What Claude Must Do First
 
-- Confirm the website goal: one professional dropshipping website for Allyoucanuse.com.
-- Confirm the first niche: car accessories, unless the owner changes it later.
+- Confirm the website goal: one professional dropshipping website for Dogvanta.com.
+- Confirm the first niche: dog walking and travel gear, unless the owner changes it later.
 - Use Next.js with TypeScript for the frontend and admin dashboard.
 - Use Firebase for Auth, Firestore, Storage, Cloud Functions, Cloud Scheduler, and Hosting or compatible deployment.
 - Use Stripe Checkout for payments and Stripe webhooks for payment confirmation.
@@ -1131,7 +1131,7 @@ Use this order: first plan the project structure, then create the repository, th
 ```
 /godmode engineer plain mode
 
-You are acting as a senior full-stack ecommerce engineer, Firebase architect, and product builder. I am building Allyoucanuse.com, one professional dropshipping website. Do not build three websites right now. Build one strong website first.
+You are acting as a senior full-stack ecommerce engineer, Firebase architect, and product builder. I am building Dogvanta.com, one professional dropshipping website. Do not build three websites right now. Build one strong website first.
 
 Use this tech stack:
 - Next.js with TypeScript
