@@ -1,6 +1,6 @@
-# Allyoucanuse.com
+# Dogvanta
 
-Premium dropshipping ecommerce platform. See [prd.md](./prd.md) for the full product blueprint.
+Premium dog-products ecommerce store (Shopify-style storefront + admin). See [prd.md](./prd.md) for the full product blueprint.
 
 ## Tech stack
 - Next.js 14 (App Router) + TypeScript + Tailwind CSS

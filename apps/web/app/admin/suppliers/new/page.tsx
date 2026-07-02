@@ -189,7 +189,7 @@ export default function NewSupplier() {
           <h2 className="font-semibold">Certifications</h2>
           <div className="flex flex-wrap gap-2">
             {CERT_OPTIONS.map(c => (
-              <label key={c} className={`cursor-pointer rounded-full border px-3 py-1 text-sm ${certs.includes(c) ? 'border-brand bg-brand/10' : 'border-slate-300'}`}>
+              <label key={c} className={`cursor-pointer rounded-full border px-3 py-1 text-sm ${certs.includes(c) ? 'border-brand bg-teal-50' : 'border-slate-300'}`}>
                 <input type="checkbox" className="hidden" checked={certs.includes(c)} onChange={() => toggleCert(c)} />
                 {c}
               </label>

@@ -20,7 +20,7 @@ export default function AutomationLevel() {
       </p>
       <div className="mt-6 space-y-3">
         {LEVELS.map(l => (
-          <label key={l.v} className={`block cursor-pointer rounded-lg border p-4 ${level === l.v ? 'border-brand bg-brand/5' : 'border-slate-200 bg-white'}`}>
+          <label key={l.v} className={`block cursor-pointer rounded-lg border p-4 ${level === l.v ? 'border-brand bg-teal-50' : 'border-slate-200 bg-white'}`}>
             <input type="radio" name="level" value={l.v} checked={level === l.v} onChange={() => setLevel(l.v)} className="mr-2" />
             <span className="font-semibold">{l.title}</span>
             <p className="ml-6 text-sm text-slate-600">{l.desc}</p>

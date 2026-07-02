@@ -31,6 +31,9 @@ export interface Product {
   vendor?: string;
   productType?: string;
   tags?: string[];
+  rating?: number;        // 0–5, used for storefront review stars
+  reviewCount?: number;
+  badge?: string;         // e.g. "Best seller", "New" — shown as a card pill
 
   // Sourcing / customs (admin-only, used by suppliers + shipping calc)
   supplierId?: string;

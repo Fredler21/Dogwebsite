@@ -13,15 +13,16 @@ interface Theme {
 }
 
 const THEMES: Record<ThemePreset, Theme> = {
+  // `pet` is the live Dogvanta brand: trustworthy teal primary + warm amber accent.
+  pet: { name: 'pet', brand: '#0f766e', brandAccent: '#f59e0b', surface: '#fbfaf8', ink: '#1c1917', logoText: 'Dogvanta' },
   car: { name: 'car', brand: '#0f172a', brandAccent: '#f97316', surface: '#f8fafc', ink: '#0f172a', logoText: 'Dogvanta' },
-  pet: { name: 'pet', brand: '#7c3aed', brandAccent: '#f59e0b', surface: '#faf5ff', ink: '#1e1b4b', logoText: 'Pawkind' },
   home: { name: 'home', brand: '#065f46', brandAccent: '#d97706', surface: '#fafaf9', ink: '#1c1917', logoText: 'Homely' }
 };
 
-const Ctx = createContext<Theme>(THEMES.car);
+const Ctx = createContext<Theme>(THEMES.pet);
 
-export function ThemeProvider({ preset = 'car', children }: { preset?: ThemePreset; children: ReactNode }) {
-  const theme = useMemo(() => THEMES[preset] ?? THEMES.car, [preset]);
+export function ThemeProvider({ preset = 'pet', children }: { preset?: ThemePreset; children: ReactNode }) {
+  const theme = useMemo(() => THEMES[preset] ?? THEMES.pet, [preset]);
   const css = `:root{
     --brand:${theme.brand};
     --brand-accent:${theme.brandAccent};
