@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { LogoMark } from '@/components/brand/LogoMark';
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -42,9 +43,9 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 text-sm md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 text-xl font-extrabold text-ink">
-            <span aria-hidden>🐾</span> <span className="font-display">Dogvanta</span>
+            <LogoMark size={26} /> <span className="font-display">Dogvanta</span>
           </div>
-          <p className="mt-3 max-w-xs text-slate-600">Premium gear for happy, healthy dogs — shipped to your door with a 30-day happiness guarantee.</p>
+          <p className="mt-3 max-w-xs text-slate-600">Thoughtfully made gear for happy, healthy dogs, shipped to your door with a 30-day happiness guarantee.</p>
           <div className="mt-4 flex gap-3 text-slate-500">
             <a href="https://instagram.com" aria-label="Instagram" className="hover:text-brand">Instagram</a>
             <span aria-hidden>·</span>

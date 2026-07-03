@@ -14,7 +14,7 @@ const TRUST = [
 ];
 
 const REVIEWS = [
-  { name: 'Jessica M.', text: 'My Golden destroys every toy — the chew bone has lasted 3 months. Finally!', pet: 'Golden Retriever' },
+  { name: 'Jessica M.', text: 'My Golden destroys every toy, but the chew bone has lasted 3 months. Finally!', pet: 'Golden Retriever' },
   { name: 'Andre P.', text: 'The orthopedic bed changed my senior dog’s life. He actually sleeps through the night now.', pet: 'Labrador, 11 yrs' },
   { name: 'Priya K.', text: 'No-pull harness is a game changer on walks. Ordered one for each of my two pups.', pet: 'Beagles x2' }
 ];
@@ -41,7 +41,7 @@ export default async function HomePage() {
               Everything your dog loves, delivered.
             </h1>
             <p className="mt-5 max-w-md text-lg text-white/80">
-              Premium toys, beds, and walking gear — vet-approved, dog-tested, and backed by our 30-day happiness guarantee.
+              Thoughtfully designed toys, beds, and walking gear. Vet-approved, dog-tested, and backed by our 30-day happiness guarantee.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/shop" className="btn-accent">Shop best sellers</Link>
@@ -120,7 +120,7 @@ export default async function HomePage() {
       <section className="mx-auto mt-14 max-w-7xl px-6">
         <div className="relative overflow-hidden rounded-3xl bg-brand-accent px-8 py-12 text-ink md:px-14 md:py-16">
           <div className="relative z-10 max-w-lg">
-            <h2 className="font-display text-3xl font-extrabold md:text-4xl">Summer sale — up to 40% off</h2>
+            <h2 className="font-display text-3xl font-extrabold md:text-4xl">Summer sale: up to 40% off</h2>
             <p className="mt-3 text-ink/80">Stock up on the season’s essentials. Limited-time savings across toys, beds, and travel gear.</p>
             <Link href="/shop" className="mt-6 inline-block rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">
               Shop the sale

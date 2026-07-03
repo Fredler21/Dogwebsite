@@ -13,8 +13,8 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Dogvanta — premium products for happy dogs', template: '%s | Dogvanta' },
-  description: 'Premium dog accessories shipped to your door. Free returns. Real support.',
+  title: { default: 'Dogvanta: gear for happy, healthy dogs', template: '%s | Dogvanta' },
+  description: 'Well-made dog accessories shipped to your door. Free returns. Real support.',
   openGraph: { type: 'website', siteName: 'Dogvanta', url: SITE_URL }
 };
 

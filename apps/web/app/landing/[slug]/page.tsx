@@ -14,7 +14,7 @@ const STUB: Record<string, { title: string; heroHeading: string; heroSub: string
   'spring-sale': {
     title: 'Spring Sale',
     heroHeading: '25% off everything for the road',
-    heroSub: 'Three days only — refresh your ride.',
+    heroSub: 'Three days only. Refresh your ride.',
     ctaText: 'Shop the sale'
   }
 };

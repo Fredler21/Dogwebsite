@@ -81,7 +81,7 @@ function build(i: number, s: Seed): Product {
     id: `p${i}`,
     title: s.title,
     slug: s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''),
-    description: `${s.title} — thoughtfully designed for happy, healthy dogs. Premium materials, tested by real pups, and backed by our 30-day happiness guarantee.`,
+    description: `${s.title} — thoughtfully designed for happy, healthy dogs. Durable, dog-safe materials, tested by real pups, and backed by our 30-day happiness guarantee.`,
     categoryId: s.cat,
     images: [dog(i + 100), dog(i + 130)],
     price: s.price,

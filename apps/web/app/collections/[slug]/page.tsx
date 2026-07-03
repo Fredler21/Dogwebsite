@@ -38,7 +38,7 @@ export default async function CategoryPage({ params }: { params: { slug: string 
 
       <div className="mx-auto max-w-7xl px-6 py-12">
         {products.length === 0 ? (
-          <p className="text-center text-slate-500">No products in this collection yet — check back soon.</p>
+          <p className="text-center text-slate-500">No products in this collection yet. Check back soon.</p>
         ) : (
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
             {products.map(p => <ProductCard key={p.id} p={p} />)}

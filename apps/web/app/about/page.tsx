@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About us',
-  description: 'Dogvanta is on a mission to make premium, vet-approved dog gear accessible to every dog parent.'
+  description: 'Dogvanta is on a mission to make thoughtfully made, vet-approved dog gear accessible to every dog parent.'
 };
 
 const VALUES = [
-  { icon: '🐕', title: 'Dogs first', text: 'Every product is chosen to make a real dog’s life better — not to hit a price point.' },
+  { icon: '🐕', title: 'Dogs first', text: 'Every product is chosen to make a real dog’s life better, not to hit a price point.' },
   { icon: '🔬', title: 'Vet-approved', text: 'We review materials and safety with veterinary partners before anything ships.' },
   { icon: '🌍', title: 'Honest sourcing', text: 'We vet every supplier for quality and ethics, and price fairly.' }
 ];
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <h2 className="font-display text-2xl font-bold">Our promise</h2>
             <p className="mt-3 text-slate-600">
               We stand behind everything we sell with a 30-day happiness guarantee. If your dog doesn’t love it,
-              we’ll make it right — no drama, no fine print. Fast, tracked shipping and real humans on support are
+              we’ll make it right, with no drama and no fine print. Fast, tracked shipping and real humans on support are
               the baseline, not the upsell.
             </p>
             <Link href="/shop" className="btn-primary mt-6">Shop the collection</Link>

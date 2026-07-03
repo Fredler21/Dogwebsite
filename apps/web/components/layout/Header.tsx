@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useCart } from '@/lib/cart';
+import { LogoMark } from '@/components/brand/LogoMark';
 
 const NAV = [
   { href: '/shop', label: 'Shop all' },
@@ -58,7 +59,7 @@ export function Header() {
           </button>
 
           <Link href="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-ink">
-            <span aria-hidden className="text-2xl">🐾</span>
+            <LogoMark size={30} />
             <span className="font-display">Dogvanta</span>
           </Link>
 

@@ -14,11 +14,11 @@ export default function ShippingPolicyPage() {
       <div className="mt-8 space-y-6 text-slate-700">
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Processing time</h2>
-          <p className="mt-2">Orders are processed within 1–2 business days. Orders placed on weekends or holidays are processed the next business day.</p>
+          <p className="mt-2">Orders are processed within 1 to 2 business days. Orders placed on weekends or holidays are processed the next business day.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Delivery time & rates</h2>
-          <p className="mt-2">Standard delivery typically takes 3–7 business days after processing. Shipping is <strong>free on orders over $50</strong>; a flat rate is calculated at checkout for smaller orders. Exact rates and estimated delivery dates are shown before you pay.</p>
+          <p className="mt-2">Standard delivery typically takes 3 to 7 business days after processing. Shipping is <strong>free on orders over $50</strong>; a flat rate is calculated at checkout for smaller orders. Exact rates and estimated delivery dates are shown before you pay.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Tracking</h2>

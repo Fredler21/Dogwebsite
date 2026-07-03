@@ -100,7 +100,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           </div>
 
           <p className="mt-4 text-slate-600">{product.description}</p>
-          <p className="mt-2 text-sm text-slate-500">🚚 Ships in 3–7 business days · Free over $50</p>
+          <p className="mt-2 text-sm text-slate-500">🚚 Ships in 3 to 7 business days · Free over $50</p>
 
           {/* Quantity + add */}
           <div className="mt-6 flex flex-wrap items-center gap-3">

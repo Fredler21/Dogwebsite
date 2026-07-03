@@ -27,7 +27,7 @@ export default function TermsPage() {
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Intellectual property</h2>
-          <p className="mt-2">All content on this site — logos, text, and images — is owned by Dogvanta or its licensors and may not be reused without permission.</p>
+          <p className="mt-2">All content on this site, including logos, text, and images, is owned by Dogvanta or its licensors and may not be reused without permission.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Limitation of liability</h2>

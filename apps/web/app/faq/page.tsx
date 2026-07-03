@@ -10,8 +10,8 @@ const FAQ: { section: string; items: { q: string; a: string }[] }[] = [
   {
     section: 'Shipping & delivery',
     items: [
-      { q: 'How long does shipping take?', a: 'Orders are processed within 1–2 business days and typically arrive in 3–7 business days. You’ll get a tracking link by email as soon as it ships.' },
-      { q: 'Do you offer free shipping?', a: 'Yes — shipping is free on all orders over $50. Below that, a flat rate is calculated at checkout.' },
+      { q: 'How long does shipping take?', a: 'Orders are processed within 1 to 2 business days and typically arrive in 3 to 7 business days. You’ll get a tracking link by email as soon as it ships.' },
+      { q: 'Do you offer free shipping?', a: 'Yes, shipping is free on all orders over $50. Below that, a flat rate is calculated at checkout.' },
       { q: 'Do you ship internationally?', a: 'We ship to most countries. International delivery times and any duties are shown at checkout.' }
     ]
   },
@@ -26,7 +26,7 @@ const FAQ: { section: string; items: { q: string; a: string }[] }[] = [
     section: 'Products & sizing',
     items: [
       { q: 'How do I choose the right size?', a: 'Every product page includes a sizing chart. Measure your dog’s girth, neck, or length as noted and pick the matching size.' },
-      { q: 'Are your products safe?', a: 'Yes — all products use non-toxic, pet-safe materials and are reviewed with our veterinary partners before we stock them.' }
+      { q: 'Are your products safe?', a: 'Yes, all products use non-toxic, pet-safe materials and are reviewed with our veterinary partners before we stock them.' }
     ]
   },
   {

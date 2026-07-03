@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Return policy',
-  description: 'Dogvanta’s 30-day happiness guarantee — how returns, replacements, and refunds work.'
+  description: 'Dogvanta’s 30-day happiness guarantee: how returns, replacements, and refunds work.'
 };
 
 export default function ReturnPolicyPage() {
@@ -22,11 +22,11 @@ export default function ReturnPolicyPage() {
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Condition of returns</h2>
-          <p className="mt-2">Items should be in resellable condition where possible. For hygiene and safety reasons, some used consumables (like opened shampoo or heavily chewed toys) may only qualify for a replacement rather than a resale return — but if a product failed, we’ll make it right regardless.</p>
+          <p className="mt-2">Items should be in resellable condition where possible. For hygiene and safety reasons, some used consumables (like opened shampoo or heavily chewed toys) may only qualify for a replacement rather than a resale return. But if a product failed, we’ll make it right regardless.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Refunds</h2>
-          <p className="mt-2">Once your return is received or the issue is confirmed, refunds are issued to your original payment method within 5–10 business days. Original shipping costs are non-refundable unless the return is due to our error.</p>
+          <p className="mt-2">Once your return is received or the issue is confirmed, refunds are issued to your original payment method within 5 to 10 business days. Original shipping costs are non-refundable unless the return is due to our error.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Damaged or wrong items</h2>

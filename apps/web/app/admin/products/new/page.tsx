@@ -60,7 +60,7 @@ export default function NewProduct() {
       const images = [...uploaded, ...pasted];
       if (images.length === 0) {
         setSaving(false);
-        return setError('Add at least one image — upload a file or paste an image URL.');
+        return setError('Add at least one image. Upload a file or paste an image URL.');
       }
 
       const now = Date.now();
