@@ -177,8 +177,10 @@ export default function NewProduct() {
               </span>
               <input
                 type="number"
-                value={form[k]}
-                onChange={(e) => set(k, +e.target.value)}
+                value={form[k] === 0 ? '' : form[k]}
+                onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)}
+                min="0"
+                placeholder="0"
                 className="mt-1 w-full rounded border border-slate-300 px-3 py-2"
               />
             </label>
@@ -197,8 +199,10 @@ export default function NewProduct() {
               </span>
               <input
                 type="number"
-                value={form[k]}
-                onChange={(e) => set(k, +e.target.value)}
+                value={form[k] === 0 ? '' : form[k]}
+                onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)}
+                min="0"
+                placeholder="0"
                 className="mt-1 w-full rounded border border-slate-300 px-3 py-2"
               />
             </label>

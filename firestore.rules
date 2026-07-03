@@ -3,7 +3,14 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     function isSignedIn() { return request.auth != null; }
-    function isAdmin()    { return isSignedIn() && request.auth.token.admin == true; }
+    // Admin = the `admin` custom claim, OR the owner's verified Google email
+    // (bootstrap so the store owner is admin without provisioning a claim).
+    function isOwnerEmail() {
+      return isSignedIn()
+        && request.auth.token.email_verified == true
+        && request.auth.token.email == 'pierrelouisfredler@gmail.com';
+    }
+    function isAdmin()    { return isSignedIn() && (request.auth.token.admin == true || isOwnerEmail()); }
     function isOwner(uid) { return isSignedIn() && request.auth.uid == uid; }
     function isCreate()   { return resource == null; }
     function isUpdate()   { return resource != null; }
