@@ -57,7 +57,7 @@ export default async function HomePage() {
           <div className="relative">
             <div className="aspect-[4/3] overflow-hidden rounded-3xl shadow-2xl ring-1 ring-white/10">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://placedog.net/1000/750?id=200" alt="A happy dog with Dogvanta gear" className="h-full w-full object-cover" />
+              <img src="https://placedog.net/1000/750?id=200" alt="A happy dog with Refined Paw gear" className="h-full w-full object-cover" />
             </div>
             <div className="absolute -bottom-5 -left-5 hidden rounded-2xl bg-white p-4 text-ink shadow-xl sm:block">
               <div className="text-2xl font-extrabold text-brand">30-day</div>

@@ -43,7 +43,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 text-sm md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-2 text-xl font-extrabold text-ink">
-            <LogoMark size={26} /> <span className="font-display">Dogvanta</span>
+            <LogoMark size={26} /> <span className="font-display">Refined Paw</span>
           </div>
           <p className="mt-3 max-w-xs text-slate-600">Thoughtfully made gear for happy, healthy dogs, shipped to your door with a 30-day happiness guarantee.</p>
           <div className="mt-4 flex gap-3 text-slate-500">
@@ -87,7 +87,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-200">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 py-6 text-xs text-slate-500 md:flex-row">
-          <span>© {2026} Dogvanta. All rights reserved.</span>
+          <span>© {2026} Refined Paw. All rights reserved.</span>
           <div className="flex items-center gap-2" aria-label="Accepted payment methods">
             {['VISA', 'MC', 'AMEX', 'PayPal', 'Apple Pay', 'G Pay'].map(m => (
               <span key={m} className="rounded border border-slate-200 bg-white px-2 py-1 font-semibold text-slate-500">{m}</span>

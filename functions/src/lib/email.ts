@@ -3,8 +3,8 @@ import { defineSecret } from 'firebase-functions/params';
 
 const RESEND_KEY = defineSecret('RESEND_API_KEY');
 
-export const FROM_EMAIL = process.env.FROM_EMAIL ?? 'support@dogvanta.com';
-export const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL ?? 'support@dogvanta.com';
+export const FROM_EMAIL = process.env.FROM_EMAIL ?? 'support@refinedpaw.com';
+export const SUPPORT_EMAIL = process.env.SUPPORT_EMAIL ?? 'support@refinedpaw.com';
 
 let _client: Resend | null = null;
 function client(): Resend {

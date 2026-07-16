@@ -84,7 +84,7 @@ export default function NewProduct() {
         // Sourcing (admin-only, never shown to customers).
         costCents: Math.round(form.supplierCost),
         shippingCostCents: Math.round(form.shippingCost),
-        vendor: 'Dogvanta',
+        vendor: 'Refined Paw',
         createdAt: now,
         updatedAt: now,
       });

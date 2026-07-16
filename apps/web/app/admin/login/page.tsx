@@ -34,7 +34,7 @@ export default function AdminLogin() {
           <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-lg font-bold text-white">
             D
           </div>
-          <h1 className="text-2xl font-semibold text-slate-900">Log in to Dogvanta</h1>
+          <h1 className="text-2xl font-semibold text-slate-900">Log in to Refined Paw</h1>
           <p className="mt-1 text-sm text-slate-500">Continue to your admin dashboard</p>
         </div>
 

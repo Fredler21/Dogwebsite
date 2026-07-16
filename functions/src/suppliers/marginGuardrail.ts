@@ -4,7 +4,7 @@ import { db } from '../lib/admin';
 /**
  * Margin guardrail + supplier price-review watcher.
  *
- * Two safety nets that prevent Dogvanta from listing money-losing products
+ * Two safety nets that prevent Refined Paw from listing money-losing products
  * after a supplier raises their cost:
  *
  *  1. `validateProductMargin` — callable used by the admin product editor

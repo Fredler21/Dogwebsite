@@ -18,7 +18,7 @@ export function Sidebar() {
   return (
     <aside className="w-56 border-r border-slate-200 bg-white p-4">
       <div className="flex items-center gap-2 px-2 text-xl font-bold">
-        <LogoMark size={24} /> Dogvanta
+        <LogoMark size={24} /> Refined Paw
       </div>
       <nav className="mt-6 space-y-1">
         {NAV.map(n => (

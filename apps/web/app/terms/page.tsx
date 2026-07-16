@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Terms of service',
-  description: 'The terms and conditions for shopping with Dogvanta.'
+  description: 'The terms and conditions for shopping with Refined Paw.'
 };
 
 export default function TermsPage() {
@@ -12,7 +12,7 @@ export default function TermsPage() {
       <p className="mt-2 text-sm text-slate-500">Last updated: July 2026</p>
 
       <div className="mt-8 space-y-6 text-slate-700">
-        <p>Welcome to Dogvanta. By accessing or purchasing from our store, you agree to these terms. Please read them carefully.</p>
+        <p>Welcome to Refined Paw. By accessing or purchasing from our store, you agree to these terms. Please read them carefully.</p>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Orders & pricing</h2>
           <p className="mt-2">All prices are listed in USD and may change without notice. We reserve the right to refuse or cancel any order, including for pricing errors or suspected fraud. A confirmed order forms a contract once payment is accepted.</p>
@@ -27,11 +27,11 @@ export default function TermsPage() {
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Intellectual property</h2>
-          <p className="mt-2">All content on this site, including logos, text, and images, is owned by Dogvanta or its licensors and may not be reused without permission.</p>
+          <p className="mt-2">All content on this site, including logos, text, and images, is owned by Refined Paw or its licensors and may not be reused without permission.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Limitation of liability</h2>
-          <p className="mt-2">To the extent permitted by law, Dogvanta is not liable for indirect or consequential damages arising from use of our products or site. Nothing in these terms limits rights you have under applicable consumer law.</p>
+          <p className="mt-2">To the extent permitted by law, Refined Paw is not liable for indirect or consequential damages arising from use of our products or site. Nothing in these terms limits rights you have under applicable consumer law.</p>
         </section>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Contact</h2>

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Privacy policy',
-  description: 'How Dogvanta collects, uses, and protects your personal information.'
+  description: 'How Refined Paw collects, uses, and protects your personal information.'
 };
 
 export default function PrivacyPolicyPage() {
@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
       <p className="mt-2 text-sm text-slate-500">Last updated: July 2026</p>
 
       <div className="mt-8 space-y-6 text-slate-700">
-        <p>Dogvanta (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it. By using our site, you agree to the practices described here.</p>
+        <p>Refined Paw (“we”, “us”) respects your privacy. This policy explains what we collect and how we use it. By using our site, you agree to the practices described here.</p>
         <section>
           <h2 className="font-display text-xl font-bold text-ink">Information we collect</h2>
           <p className="mt-2">We collect information you provide, such as your name, email, shipping address, and order details, along with information collected automatically, such as device and usage data via cookies and analytics.</p>

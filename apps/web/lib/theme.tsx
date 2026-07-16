@@ -13,9 +13,9 @@ interface Theme {
 }
 
 const THEMES: Record<ThemePreset, Theme> = {
-  // `pet` is the live Dogvanta brand: trustworthy teal primary + warm amber accent.
-  pet: { name: 'pet', brand: '#0f766e', brandAccent: '#f59e0b', surface: '#fbfaf8', ink: '#1c1917', logoText: 'Dogvanta' },
-  car: { name: 'car', brand: '#0f172a', brandAccent: '#f97316', surface: '#f8fafc', ink: '#0f172a', logoText: 'Dogvanta' },
+  // `pet` is the live Refined Paw brand: trustworthy teal primary + warm amber accent.
+  pet: { name: 'pet', brand: '#0f766e', brandAccent: '#f59e0b', surface: '#fbfaf8', ink: '#1c1917', logoText: 'Refined Paw' },
+  car: { name: 'car', brand: '#0f172a', brandAccent: '#f97316', surface: '#f8fafc', ink: '#0f172a', logoText: 'Refined Paw' },
   home: { name: 'home', brand: '#065f46', brandAccent: '#d97706', surface: '#fafaf9', ink: '#1c1917', logoText: 'Homely' }
 };
 
