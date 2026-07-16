@@ -8,6 +8,7 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { ConsentBanner } from '@/components/ConsentBanner';
 import { GA4 } from '@/components/analytics/GA4';
 import { MetaPixel, TikTokPixel, PinterestTag } from '@/components/analytics/Pixels';
+import { Analytics } from '@vercel/analytics/next';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
 
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MetaPixel />
         <TikTokPixel />
         <PinterestTag />
+        <Analytics />
       </body>
     </html>
   );
