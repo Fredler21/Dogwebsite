@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'FAQ',
-  description: 'Answers to common questions about shipping, returns, sizing, and orders at Dogvanta.'
+  description: 'Answers to common questions about shipping, returns, sizing, and orders at Refined Paw.'
 };
 
 const FAQ: { section: string; items: { q: string; a: string }[] }[] = [

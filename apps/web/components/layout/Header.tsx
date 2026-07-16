@@ -60,7 +60,7 @@ export function Header() {
 
           <Link href="/" className="flex items-center gap-2 text-2xl font-extrabold tracking-tight text-ink">
             <LogoMark size={30} />
-            <span className="font-display">Dogvanta</span>
+            <span className="font-display">Refined Paw</span>
           </Link>
 
           <nav className="ml-6 hidden items-center gap-6 lg:flex">

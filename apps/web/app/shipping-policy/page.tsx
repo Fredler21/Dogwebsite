@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Shipping policy',
-  description: 'How and when Dogvanta ships your order, including processing times, rates, and tracking.'
+  description: 'How and when Refined Paw ships your order, including processing times, rates, and tracking.'
 };
 
 export default function ShippingPolicyPage() {

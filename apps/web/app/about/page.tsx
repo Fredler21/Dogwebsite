@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'About us',
-  description: 'Dogvanta is on a mission to make thoughtfully made, vet-approved dog gear accessible to every dog parent.'
+  description: 'Refined Paw is on a mission to make thoughtfully made, vet-approved dog gear accessible to every dog parent.'
 };
 
 const VALUES = [
@@ -19,7 +19,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
           <h1 className="font-display text-4xl font-extrabold md:text-5xl">Built by dog people, for dog people</h1>
           <p className="mt-4 text-lg text-white/80">
-            Dogvanta started with a simple frustration: too much overpriced, low-quality dog gear that didn’t last a week.
+            Refined Paw started with a simple frustration: too much overpriced, low-quality dog gear that didn’t last a week.
             So we built a store that only stocks things we’d give our own dogs.
           </p>
         </div>

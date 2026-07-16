@@ -9,13 +9,13 @@ import { ConsentBanner } from '@/components/ConsentBanner';
 import { GA4 } from '@/components/analytics/GA4';
 import { MetaPixel, TikTokPixel, PinterestTag } from '@/components/analytics/Pixels';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://refinedpaw.com';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Dogvanta: gear for happy, healthy dogs', template: '%s | Dogvanta' },
+  title: { default: 'Refined Paw: gear for happy, healthy dogs', template: '%s | Refined Paw' },
   description: 'Well-made dog accessories shipped to your door. Free returns. Real support.',
-  openGraph: { type: 'website', siteName: 'Dogvanta', url: SITE_URL }
+  openGraph: { type: 'website', siteName: 'Refined Paw', url: SITE_URL }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

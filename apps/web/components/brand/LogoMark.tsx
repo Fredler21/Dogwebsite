@@ -1,5 +1,5 @@
 /**
- * Dogvanta logo mark — the "Refined Paw" emblem.
+ * Refined Paw logo mark — the "Refined Paw" emblem.
  * Emerald disc, gold hairline ring, cream paw with a single gold toe.
  * Pure/presentational (no hooks) so it works in server or client components.
  */
@@ -10,7 +10,7 @@ export function LogoMark({ size = 28, className = '' }: { size?: number; classNa
       height={size}
       viewBox="0 0 96 96"
       role="img"
-      aria-label="Dogvanta"
+      aria-label="Refined Paw"
       className={className}
     >
       <circle cx="48" cy="48" r="45" fill="#0f766e" />

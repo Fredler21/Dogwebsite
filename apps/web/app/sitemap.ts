@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getProducts, CATEGORIES } from '@/lib/products';
 
-const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dogvanta.com';
+const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://refinedpaw.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();

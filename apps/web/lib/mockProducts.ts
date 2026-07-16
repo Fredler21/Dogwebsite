@@ -87,7 +87,7 @@ function build(i: number, s: Seed): Product {
     price: s.price,
     compareAtPrice: s.compareAt,
     status: 'active',
-    vendor: s.vendor ?? 'Dogvanta',
+    vendor: s.vendor ?? 'Refined Paw',
     rating: s.rating,
     reviewCount: s.reviews,
     badge: s.badge,

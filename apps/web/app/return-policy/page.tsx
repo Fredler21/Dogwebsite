@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Return policy',
-  description: 'Dogvanta’s 30-day happiness guarantee: how returns, replacements, and refunds work.'
+  description: 'Refined Paw’s 30-day happiness guarantee: how returns, replacements, and refunds work.'
 };
 
 export default function ReturnPolicyPage() {
