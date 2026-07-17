@@ -54,11 +54,28 @@ export default function Products() {
           <DataTable
             rows={rows}
             columns={[
-              { key: 'title', label: 'Title', render: (r) => r.title ?? r.id },
+              {
+                key: 'title',
+                label: 'Title',
+                render: (r) => (
+                  <Link className="text-brand-accent underline" href={`/admin/products/${r.id}`}>
+                    {r.title ?? r.id}
+                  </Link>
+                ),
+              },
               { key: 'price', label: 'Price', render: (r) => fmt(r.price) },
               { key: 'cat', label: 'Category', render: (r) => r.categoryId ?? '—' },
               { key: 'inv', label: 'Stock', render: (r) => (typeof r.inventoryCount === 'number' ? r.inventoryCount : '—') },
               { key: 'status', label: 'Status', render: (r) => <StatusBadge status={r.status ?? 'draft'} /> },
+              {
+                key: 'edit',
+                label: '',
+                render: (r) => (
+                  <Link className="text-sm text-brand-accent underline" href={`/admin/products/${r.id}`}>
+                    Edit
+                  </Link>
+                ),
+              },
             ]}
           />
         )}
