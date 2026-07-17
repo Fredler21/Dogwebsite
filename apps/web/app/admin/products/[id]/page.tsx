@@ -49,10 +49,10 @@ export default function EditProduct({ params }: { params: { id: string } }) {
         slug: (d.slug as string) ?? '',
         description: (d.description as string) ?? '',
         categoryId: (d.categoryId as string) ?? CATEGORIES[0]?.id ?? '',
-        price: (d.price as number) ?? 0,
-        compareAtPrice: (d.compareAtPrice as number) ?? 0,
-        supplierCost: (d.costCents as number) ?? 0,
-        shippingCost: (d.shippingCostCents as number) ?? 0,
+        price: ((d.price as number) ?? 0) / 100,
+        compareAtPrice: ((d.compareAtPrice as number) ?? 0) / 100,
+        supplierCost: ((d.costCents as number) ?? 0) / 100,
+        shippingCost: ((d.shippingCostCents as number) ?? 0) / 100,
         inventoryCount: (d.inventoryCount as number) ?? 0,
         status: ((d.status as string) === 'active' ? 'active' : 'draft'),
       });
@@ -84,7 +84,7 @@ export default function EditProduct({ params }: { params: { id: string } }) {
     setSaved(false);
     const slug = form.slug || slugify(form.title);
     if (!form.title.trim()) return setError('Title is required.');
-    if (form.price <= 0) return setError('Price must be greater than 0 (cents).');
+    if (form.price <= 0) return setError('Price must be greater than 0.');
 
     setSaving(true);
     try {
@@ -102,15 +102,15 @@ export default function EditProduct({ params }: { params: { id: string } }) {
         description: form.description.trim(),
         categoryId: form.categoryId,
         images,
-        price: Math.round(form.price),
-        compareAtPrice: form.compareAtPrice > 0 ? Math.round(form.compareAtPrice) : 0,
+        price: Math.round(form.price * 100),
+        compareAtPrice: form.compareAtPrice > 0 ? Math.round(form.compareAtPrice * 100) : 0,
         active: form.status === 'active',
         status: form.status,
         trackInventory: true,
         inventoryCount: Math.max(0, Math.round(form.inventoryCount)),
         stockStatus: form.inventoryCount > 0 ? 'in_stock' : 'out_of_stock',
-        costCents: Math.round(form.supplierCost),
-        shippingCostCents: Math.round(form.shippingCost),
+        costCents: Math.round(form.supplierCost * 100),
+        shippingCostCents: Math.round(form.shippingCost * 100),
         updatedAt: Date.now(),
       });
       setFiles([]);
@@ -180,8 +180,8 @@ export default function EditProduct({ params }: { params: { id: string } }) {
         <div className="grid gap-4 md:grid-cols-2">
           {(['price', 'compareAtPrice'] as const).map((k) => (
             <label key={k} className="block">
-              <span className="text-sm font-medium">{k === 'price' ? 'Price' : 'Compare-at price'} (cents)</span>
-              <input type="number" value={form[k] === 0 ? '' : form[k]} onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)} min="0" placeholder="0" className="mt-1 w-full rounded border border-slate-300 px-3 py-2" />
+              <span className="text-sm font-medium">{k === 'price' ? 'Price' : 'Compare-at price'} ($)</span>
+              <input type="number" value={form[k] === 0 ? '' : form[k]} onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)} min="0" step="0.01" placeholder="19.99" className="mt-1 w-full rounded border border-slate-300 px-3 py-2" />
             </label>
           ))}
         </div>
@@ -189,13 +189,13 @@ export default function EditProduct({ params }: { params: { id: string } }) {
         <div className="grid gap-4 md:grid-cols-3">
           {(['supplierCost', 'shippingCost', 'inventoryCount'] as const).map((k) => (
             <label key={k} className="block">
-              <span className="text-sm font-medium">{k === 'supplierCost' ? 'Supplier cost (cents)' : k === 'shippingCost' ? 'Shipping cost (cents)' : 'Inventory count'}</span>
-              <input type="number" value={form[k] === 0 ? '' : form[k]} onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)} min="0" placeholder="0" className="mt-1 w-full rounded border border-slate-300 px-3 py-2" />
+              <span className="text-sm font-medium">{k === 'supplierCost' ? 'Supplier cost ($)' : k === 'shippingCost' ? 'Shipping cost ($)' : 'Inventory count'}</span>
+              <input type="number" value={form[k] === 0 ? '' : form[k]} onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)} min="0" step={k === 'inventoryCount' ? '1' : '0.01'} placeholder={k === 'inventoryCount' ? '0' : '0.00'} className="mt-1 w-full rounded border border-slate-300 px-3 py-2" />
             </label>
           ))}
         </div>
 
-        <div className="rounded bg-emerald-50 p-3 text-sm text-emerald-800">Estimated profit: ${(profit / 100).toFixed(2)}</div>
+        <div className="rounded bg-emerald-50 p-3 text-sm text-emerald-800">Estimated profit: ${profit.toFixed(2)}</div>
 
         {/* Images */}
         <div className="rounded-lg border border-slate-200 p-4">

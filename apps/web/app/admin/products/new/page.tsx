@@ -48,7 +48,7 @@ export default function NewProduct() {
     const slug = effectiveSlug;
     if (!form.title.trim()) return setError('Title is required.');
     if (!slug) return setError('Slug is required.');
-    if (form.price <= 0) return setError('Price must be greater than 0 (cents).');
+    if (form.price <= 0) return setError('Price must be greater than 0.');
 
     setSaving(true);
     try {
@@ -71,8 +71,8 @@ export default function NewProduct() {
         description: form.description.trim(),
         categoryId: form.categoryId,
         images,
-        price: Math.round(form.price),
-        ...(form.compareAtPrice > 0 ? { compareAtPrice: Math.round(form.compareAtPrice) } : {}),
+        price: Math.round(form.price * 100),
+        ...(form.compareAtPrice > 0 ? { compareAtPrice: Math.round(form.compareAtPrice * 100) } : {}),
         // `active` is what the Firestore security rules check for public reads.
         active,
         // `status` is the app-level lifecycle used by checkout + the admin list.
@@ -81,9 +81,9 @@ export default function NewProduct() {
         trackInventory: true,
         inventoryCount: Math.max(0, Math.round(form.inventoryCount)),
         stockStatus: form.inventoryCount > 0 ? 'in_stock' : 'out_of_stock',
-        // Sourcing (admin-only, never shown to customers).
-        costCents: Math.round(form.supplierCost),
-        shippingCostCents: Math.round(form.shippingCost),
+        // Sourcing (admin-only, never shown to customers). Stored in cents.
+        costCents: Math.round(form.supplierCost * 100),
+        shippingCostCents: Math.round(form.shippingCost * 100),
         vendor: 'Refined Paw',
         createdAt: now,
         updatedAt: now,
@@ -173,14 +173,15 @@ export default function NewProduct() {
           {(['price', 'compareAtPrice'] as const).map((k) => (
             <label key={k} className="block">
               <span className="text-sm font-medium">
-                {k === 'price' ? 'Price' : 'Compare-at price'} (cents)
+                {k === 'price' ? 'Price' : 'Compare-at price'} ($)
               </span>
               <input
                 type="number"
                 value={form[k] === 0 ? '' : form[k]}
                 onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)}
                 min="0"
-                placeholder="0"
+                step="0.01"
+                placeholder="19.99"
                 className="mt-1 w-full rounded border border-slate-300 px-3 py-2"
               />
             </label>
@@ -192,9 +193,9 @@ export default function NewProduct() {
             <label key={k} className="block">
               <span className="text-sm font-medium">
                 {k === 'supplierCost'
-                  ? 'Supplier cost (cents)'
+                  ? 'Supplier cost ($)'
                   : k === 'shippingCost'
-                  ? 'Shipping cost (cents)'
+                  ? 'Shipping cost ($)'
                   : 'Inventory count'}
               </span>
               <input
@@ -202,7 +203,8 @@ export default function NewProduct() {
                 value={form[k] === 0 ? '' : form[k]}
                 onChange={(e) => set(k, e.target.value === '' ? 0 : +e.target.value)}
                 min="0"
-                placeholder="0"
+                step={k === 'inventoryCount' ? '1' : '0.01'}
+                placeholder={k === 'inventoryCount' ? '0' : '0.00'}
                 className="mt-1 w-full rounded border border-slate-300 px-3 py-2"
               />
             </label>
@@ -210,7 +212,7 @@ export default function NewProduct() {
         </div>
 
         <div className="rounded bg-emerald-50 p-3 text-sm text-emerald-800">
-          Estimated profit: ${(profit / 100).toFixed(2)}
+          Estimated profit: ${profit.toFixed(2)}
         </div>
 
         {/* Images */}
