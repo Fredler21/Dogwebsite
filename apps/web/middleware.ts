@@ -9,7 +9,7 @@ const COMING_SOON_HTML = `<!doctype html>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<title>Refined Paw — Launching soon</title>
+<title>Refined Paw | Launching soon</title>
 <style>
   :root { --teal:#0f766e; --amber:#f59e0b; --surface:#fbfaf8; --ink:#1c1917; --muted:#57534e; }
   * { box-sizing:border-box; margin:0; padding:0; }
@@ -39,10 +39,10 @@ const COMING_SOON_HTML = `<!doctype html>
   <main class="card">
     <div class="paw" aria-hidden="true">🐾</div>
     <div class="badge">Refined&nbsp;Paw</div>
-    <h1>Something great is <span class="amp">coming</span>.</h1>
-    <p class="lead">Well-made gear for happy, healthy dogs — shipped to your door. We're putting the finishing touches on the shop. Check back soon.</p>
+    <h1>We're getting everything <span class="amp">ready</span>.</h1>
+    <p class="lead">We're a small team putting together thoughtful, well made gear for happy, healthy dogs. We want it to be just right, so give us a little time. Check back soon. We can't wait to show you around.</p>
     <div class="rule"></div>
-    <p class="foot">Questions? <a href="mailto:support@refinedpaw.com">support@refinedpaw.com</a></p>
+    <p class="foot">Have a question? Reach us anytime at <a href="mailto:support@refinedpaw.com">support@refinedpaw.com</a></p>
   </main>
 </body>
 </html>`;
